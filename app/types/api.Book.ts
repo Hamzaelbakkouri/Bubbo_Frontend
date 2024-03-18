@@ -1,3 +1,4 @@
+
 export interface book {
     id: number;
     title: string;
@@ -7,14 +8,7 @@ export interface book {
     description: string;
     rating: number;
     price: number;
-    category: Category;
+    category: string;
     language: string;
     bgColor: string;
-}
-
-
-export interface Category {
-    id: number;
-    name: string;
-    description: string;
 }

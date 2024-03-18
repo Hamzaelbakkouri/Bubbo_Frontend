@@ -1,6 +1,6 @@
 import { View, Text, ImageBackground, Image, TouchableOpacity, Pressable } from 'react-native'
 import React from 'react'
-import { RouteProp } from '@react-navigation/native';
+import { RouteProp, useNavigation } from '@react-navigation/native';
 import { RootScreenRoutesT } from '../types/RootScreenRoutes';
 import AddBookHeader from '../components/Header/AddBookHeader';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -25,29 +25,28 @@ const BookDetails: React.FC<Props> = ({ route }) => {
               borderRadius: 3,
             }} />
           </View>
-
-          <View style={{ width: "100%", paddingHorizontal: 20, paddingVertical: 10, borderRadius: 4, display: "flex", flexDirection: "row", justifyContent: "space-around", alignItems: "center", gap: 3 }}>
-            <View style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: 2 }}>
-              <Text style={{ color: "white", fontSize: 10 }}>{book.price}</Text>
-              <Image source={require("../assets/price.png")} style={{ width: 11, height: 11 }} />
-            </View>
-
-            <View style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: 2 }}>
-              <Text style={{ color: "white", fontSize: 10 }}>{book.rating}</Text>
-              <Image source={require("../assets/star.png")} style={{ width: 11, height: 11 }} />
-            </View>
-
-            <View style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: 2 }}>
-              <Text style={{ color: "white", fontSize: 10 }}>{book.creationDate}</Text>
-              <Image source={require("../assets/price.png")} style={{ width: 11, height: 11 }} />
-            </View>
+          <View style={{ width: '100%', display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center" }}>
+            <Text style={{ color: "white", fontSize: 20, fontWeight: "bold" }}>{book.title}</Text>
+            <Text style={{ color: "gray", fontSize: 15 }}>{book.author}</Text>
           </View>
         </View>
       </ImageBackground>
-      <View style={{ gap: 8 }}>
-        <View style={{ width: '100%', display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center" }}>
-          <Text style={{ color: "white", fontSize: 20, fontWeight: "bold" }}>{book.title}</Text>
-          <Text style={{ color: "gray", fontSize: 15 }}>{book.author}</Text>
+      <View style={{ gap: 7 }}>
+        <View style={{ width: "100%", paddingHorizontal: 20, paddingVertical: 10, borderRadius: 4, display: "flex", flexDirection: "row", justifyContent: "space-around", alignItems: "center", gap: 3 }}>
+          <View style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: 2 }}>
+            <Text style={{ color: "white", fontSize: 10 }}>{book.price}</Text>
+            <Image source={require("../assets/price.png")} style={{ width: 11, height: 11 }} />
+          </View>
+
+          <View style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: 2 }}>
+            <Text style={{ color: "white", fontSize: 10 }}>{book.rating}</Text>
+            <Image source={require("../assets/star.png")} style={{ width: 11, height: 11 }} />
+          </View>
+
+          <View style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: 2 }}>
+            <Text style={{ color: "white", fontSize: 10 }}>{book.creationDate}</Text>
+            <Image source={require("../assets/price.png")} style={{ width: 11, height: 11 }} />
+          </View>
         </View>
         <View style={{ width: "100%", paddingHorizontal: 10, gap: 5 }}>
           <Text style={{ color: "white", fontSize: 15 }}>Description</Text>
@@ -70,7 +69,6 @@ const BookDetails: React.FC<Props> = ({ route }) => {
             <Text style={{ color: "#E55F6D", fontSize: 10 }}>DELETE</Text>
           </TouchableOpacity>
         </View>
-
       </View>
     </View>
   )

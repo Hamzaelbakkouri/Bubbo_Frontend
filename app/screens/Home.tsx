@@ -1,9 +1,10 @@
-import { View, StyleSheet, Image } from 'react-native'
-import React from 'react'
+import { View, StyleSheet, Image, Pressable } from 'react-native'
+import React, { useState } from 'react'
 import Books from '../components/book/Books'
 import { NavigationProp, useNavigation } from '@react-navigation/native'
 import { RootScreenRoutesT } from '../types/RootScreenRoutes'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import ActionModal from '../components/Modal/ActionModal'
 
 const Home = () => {
 
@@ -35,20 +36,23 @@ const Home = () => {
   })
 
   const navigation = useNavigation<NavigationProp<RootScreenRoutesT>>();
+  const [pop, setPop] = useState<boolean>(false);
+
   return (
     <>
       <View style={style.container}>
+        <ActionModal setModalVisible={setPop} modalVisible={pop} />
         <View style={style.bar}>
           <Image
             source={require('../assets/logo.png')}
             style={{ position: 'absolute', start: 0, width: 100, height: 10, objectFit: 'cover' }}
           />
-
+          <Pressable onPress={() => { setPop(!pop) }}>
             <Image
               source={require('../assets/add.png')}
-              style={{ width: 30, height: 30 ,backgroundColor: '#E8EDDF', borderRadius: 100}}
+              style={{ width: 30, height: 30, backgroundColor: '#E8EDDF', borderRadius: 100 }}
             />
-
+          </Pressable>
         </View>
       </View>
       <Books />
@@ -57,4 +61,3 @@ const Home = () => {
 }
 
 export default Home
-

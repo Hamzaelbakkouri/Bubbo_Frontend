@@ -18,7 +18,6 @@ export const StackNavigator: React.FC = () => {
                     component={Home}
                 />
                 <Stack.Screen
-                
                     name="BookDetails"
                     component={BookDetails}
                     options={({ route }: { route: RouteProp<RootScreenRoutesT, 'BookDetails'> }) => ({

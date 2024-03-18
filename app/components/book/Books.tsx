@@ -13,11 +13,7 @@ const books: book[] = [
         description: "A timeless classic about a young girl who discovers a hidden, magical garden.",
         rating: 4.5,
         price: 12.99,
-        category: {
-            id: 1,
-            name: "Children's Fiction",
-            description: "Books written for and enjoyed by children."
-        },
+        category:"Perfect Book",
         language: "English",
         bgColor: "#FA784A"
     },
@@ -30,11 +26,7 @@ const books: book[] = [
         description: "A story of love, wealth, and tragedy set in the Roaring Twenties.",
         rating: 4.2,
         price: 14.99,
-        category: {
-            id: 2,
-            name: "Classic Literature",
-            description: "Enduring works of literature that continue to be relevant across generations."
-        },
+        category:"Perfect Book",
         language: "English",
         bgColor: "#FA784A"
     },
@@ -47,11 +39,7 @@ const books: book[] = [
         description: "The first book in the Harry Potter series, following the adventures of a young wizard.",
         rating: 4.8,
         price: 19.99,
-        category: {
-            id: 1,
-            name: "Children's Fiction",
-            description: "Books written for and enjoyed by children."
-        },
+        category:"Perfect Book",
         language: "English",
         bgColor: "#FA784A"
     },
@@ -64,11 +52,7 @@ const books: book[] = [
         description: "A powerful story of racial injustice and moral growth in a small Southern town.",
         rating: 4.7,
         price: 10.99,
-        category: {
-            id: 2,
-            name: "Classic Literature",
-            description: "Enduring works of literature that continue to be relevant across generations."
-        },
+        category:"Perfect Book",
         language: "English",
         bgColor: "#FA784A"
     }

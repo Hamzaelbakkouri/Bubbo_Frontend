@@ -4,9 +4,7 @@ import React from 'react'
 const CreateBook = () => {
   return (
     <View>
-      <Text>
-        Adding Book
-      </Text>
+      
     </View>
   )
 }
